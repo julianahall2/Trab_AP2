@@ -1,0 +1,6 @@
+#teste {
+    border-radius: 24px;
+background: linear-gradient(145deg, #201c1c, #252121);
+box-shadow:  28px 28px 6px #1e1b1b,
+             -28px -28px 6px #282323;
+}
