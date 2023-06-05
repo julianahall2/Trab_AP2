@@ -4,5 +4,6 @@
     box-shadow:  35px 35px 70px #282323,
                  -35px -35px 70px #342f2f;
     padding: 350px;
-
+    width: 300px; /* Definindo a largura */
+    height: 200px; /* Definindo a altura */
 }
