@@ -1,22 +1,50 @@
 const card = document.querySelector('.card');
-const temporaryText = document.querySelector('.temporary_text');
+const div_lista_imagens = document.querySelector('#imagem_jogador');
 const cardContent = document.querySelector('.card_content');
 const cardTitle = document.querySelector('.card_title');
 const cardSubtitle = document.querySelector('.card_subtitle');
 const cardDescription = document.querySelector('.card_description');
 
+jogadores.forEach((jogador) => {
+    jogador.caminho = jogador.imagem;
+  });
+  
+
+imagem_jogador.style.width = '300px';
+imagem_jogador.style.height ='300px';
+imagem_jogador.style.padding ='400px';
+
+
+
+const criar_imagens = (entrada) => {
+    div_lista_imagens.innerHTML = '';
+    entrada.forEach(
+        ( jogador ) => {
+            const imagem_numero = document.createElement('img');
+            imagem_numero.src = jogador.caminho;
+            imagem_numero.width = '300px';
+            imagem_numero.height ='300px';
+            
+
+            div_lista_imagens.appendChild(imagem_numero);
+
+
+        }
+    );
+}
+
+criar_imagens(jogadores);
+
+
 card.style.position = 'relative';
-card.style.width = '250px';
-card.style.height = '250px';
+card.style.width = '232px';
+card.style.height = '332px';
 card.style.color = '#2e2d31';
 card.style.background = '#131313';
 card.style.overflow = 'hidden';
 card.style.borderRadius = '20px';
+card.style.padding = '60px';
 
-temporaryText.style.fontWeight = 'bold';
-temporaryText.style.fontSize = '24px';
-temporaryText.style.padding = '6px 12px';
-temporaryText.style.color = '#f8f8f8';
 
 cardTitle.style.fontWeight = 'bold';
 
@@ -40,6 +68,9 @@ cardContentBefore.style.height = '100px';
 cardContentBefore.style.transform = 'rotate(-175deg)';
 cardContentBefore.style.borderRadius = '50%';
 cardContentBefore.style.boxShadow = 'inset 48px 48px #f2f2f2';
+
+
+
 
 cardTitle.style.color = '#131313';
 cardTitle.style.lineHeight = '15px';
