@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    font-family:'Playfair Display';
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+   
+.input::placeholder {
+    color: #9e9ea7;
+   }
+   
+.input:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');

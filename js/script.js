@@ -1,9 +1,9 @@
-const card = document.querySelector('.card');
-const div_lista_imagens = document.querySelector('#imagem_jogador');
-const cardContent = document.querySelector('.card_content');
-const cardTitle = document.querySelector('.card_title');
-const cardSubtitle = document.querySelector('.card_subtitle');
-const cardDescription = document.querySelector('.card_description');
+const card = document.getElementsByClassName('.card');
+const div_lista_imagens = document.getElementById('#imagem_jogador');
+const cardContent = document.getElementsByClassName('.card_content');
+const cardTitle = document.getElementsByClassName('.card_title');
+const cardSubtitle = document.getElementsByClassName('.card_subtitle');
+const cardDescription = document.getElementsByClassName('.card_description');
 
 jogadores.forEach((jogador) => {
     jogador.caminho = jogador.imagem;
@@ -17,16 +17,16 @@ imagem_jogador.style.padding ='400px';
 
 
 const criar_imagens = (entrada) => {
-    div_lista_imagens.innerHTML = '';
+    card.innerHTML = '';
     entrada.forEach(
         ( jogador ) => {
             const imagem_numero = document.createElement('img');
             imagem_numero.src = jogador.caminho;
-            imagem_numero.width = '300px';
-            imagem_numero.height ='300px';
+            imagem_numero.width = '300';
+            
             
 
-            div_lista_imagens.appendChild(imagem_numero);
+            card.appendChild(imagem_numero);
 
 
         }

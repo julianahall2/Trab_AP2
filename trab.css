@@ -3,6 +3,3 @@
   height: 350px;
 }
 
-.card {
-  display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5em; max-width: 1200px; margin: 0px 2em;
-};
