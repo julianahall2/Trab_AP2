@@ -1,7 +1,6 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
-container.style.gridTemplateColumns = 'repeat(6, 1fr)';
-container.style.flexWrap = 'wrap';
+container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
 
 const group = document.createElement('div');
 group.style.display = 'flex';
@@ -47,12 +46,58 @@ group.appendChild(input);
 const parentElement = document.getElementById('header');
 parentElement.appendChild(group);
 
+const jogadoresMasculinos = jogadores.filter(jogador => jogador.elenco === 'masculino');
+const jogadoresFemininos = jogadores.filter(jogador => jogador.elenco === 'feminino');
+
+const masculino = document.createElement('section');
+
+const div_masculino = document.createElement('div');
+div_masculino.style.display = 'grid';
+div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+masculino.appendChild(div_masculino)
+
+const ElencoMasculino = document.createElement('h2')
+ElencoMasculino.innerHTML = 'Elenco Masculino'
+ElencoMasculino.style.color = 'white'
+ElencoMasculino.style.textAlign = 'center'
+document.body.appendChild(ElencoMasculino);
+
+jogadoresMasculinos.forEach(jogador => {
+  const img= document.createElement('img');
+  img.src = jogador.imagem;
+  
+  div_masculino.appendChild(img);
+});
+document.body.appendChild(masculino);
+
+const feminino = document.createElement('section');
+
+const div_feminino = document.createElement('div');
+div_feminino.style.display = 'grid';
+div_feminino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+feminino.appendChild(div_feminino);
+
+const ElencoFeminino = document.createElement('h2')
+ElencoFeminino.innerHTML = 'Elenco Feminino';
+ElencoFeminino.style.color = 'white';
+ElencoFeminino.style.textAlign = 'center';
+
+document.body.appendChild(ElencoFeminino);
+jogadoresFemininos.forEach(jogador => {
+  const img= document.createElement('img');
+  img.src = jogador.imagem;
+  
+  div_feminino.appendChild(img);
+});
+document.body.appendChild(feminino);
+
+
 function criarCard(imagem, nome, altura, posicao, nascimento, elenco) {
     const div_card = document.createElement('div');
     div_card.style.position = 'relative';
     div_card.style.width = '230px';
     div_card.style.height = '350px';
-    div_card.style.color = '#2e2d31';
+    div_card.style.color = '#2e2d31'; 
     div_card.style.background = '#131313';
     div_card.style.overflow = 'hidden';
     div_card.style.borderRadius = '20px';
@@ -71,9 +116,6 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco) {
     nome_jogador.style.color = 'black';
     nome_jogador.style.fontWeight = 'bold';
     
-    
-
-  
     const altura_jogador = document.createElement('span');
     altura_jogador.innerHTML = `Altura: ${altura}`;
   
