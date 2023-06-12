@@ -53,12 +53,16 @@ container.appendChild(divDescricao);
 container.appendChild(div);
 
 const voltar = document.createElement('button');
+voltar.style.backgroundColor = 'gray';
+voltar.style.borderRadius = '40px';
+
+
 voltar.textContent = 'Voltar para página inicial';
 voltar.addEventListener('click', function() {
   window.history.back();
 });
 
-container.appendChild(voltar);
+div.appendChild(voltar);
 
 document.body.appendChild(container);
 
