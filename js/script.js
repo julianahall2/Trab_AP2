@@ -54,7 +54,9 @@ const masculino = document.createElement('section');
 const div_masculino = document.createElement('div');
 div_masculino.style.display = 'grid';
 div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
-masculino.appendChild(div_masculino)
+
+
+masculino.appendChild(div_masculino);
 
 const ElencoMasculino = document.createElement('h2')
 ElencoMasculino.innerHTML = 'Elenco Masculino'
@@ -63,10 +65,78 @@ ElencoMasculino.style.textAlign = 'center'
 document.body.appendChild(ElencoMasculino);
 
 jogadoresMasculinos.forEach(jogador => {
+  const cardMasculino = document.createElement('div');
+  cardMasculino.style.position = 'relative';
+  cardMasculino.style.width = '230px';
+  cardMasculino.style.height = '350px';
+  cardMasculino.style.color = '#2e2d31'; 
+  cardMasculino.style.background = 'black';
+  cardMasculino.style.overflow = 'hidden';
+  cardMasculino.style.borderRadius = '20px';
+  cardMasculino.style.padding = '5px';
+  cardMasculino.style.marginBottom = '30px';
+
+  const CardContent = document.createElement('div');
+  CardContent.style.position = 'absolute';
+  CardContent.style.left = '0';
+  CardContent.style.bottom = '0';
+  CardContent.style.width = '100%';
+  CardContent.style.padding = '5px';
+  CardContent.style.background = '#f2f2f2';
+  CardContent.style.borderTopLeftRadius = '20px';
+  CardContent.style.transform = 'translateY(150px)';
+  CardContent.style.transition = 'transform .25s';
+  cardMasculino.appendChild(CardContent);
+
+  const CardSubtitle = document.createElement('div');
+  CardSubtitle.style.display = 'flex';
+  CardSubtitle.style.flexDirection = 'column';
+  CardSubtitle.style.fontSize = '12px';
+  CardSubtitle.style.marginBottom = '2px';
+  CardContent.appendChild(CardSubtitle);
+  
+  const CardContentBefore = document.createElement('div');
+  CardContentBefore.style.content = '';
+  CardContentBefore.style.position = 'absolute';
+  CardContentBefore.style.top = '300px';
+  CardContentBefore.style.right = '-100px';
+  CardContentBefore.style.width = '100px';
+  CardContentBefore.style.height = '100px';
+  CardContentBefore.style.transform = 'rotate(-185deg)';
+  CardContentBefore.style.borderRadius = '50%';
+  CardContentBefore.style.boxShadow = 'inset 48px 48px #f2f2f2';
+  cardMasculino.appendChild(CardContentBefore);
+
+  cardMasculino.addEventListener('mouseenter', () => {
+    CardContent.style.transform = 'translateY(0)';
+    CardSubtitle.style.opacity = '1';
+    CardSubtitle.style.transitionDelay = '.25s';
+  });
+
+  cardMasculino.addEventListener('mouseleave', () => {
+    CardContent.style.transform = 'translateY(150px)';
+    CardSubtitle.style.opacity = '0';
+  });
+
   const img= document.createElement('img');
   img.src = jogador.imagem;
+
+  const nome = document.createElement('h3');
+  nome.style.position = 'relative';
+  nome.style.color = 'black';
+  nome.style.fontWeight = 'bold';
+  nome.style.textAlign = 'center';
+  nome.innerHTML = jogador.nome;
+
+  const posicao = document.createElement('p');
+  posicao.innerHTML = `Posição: ${jogador.posicao}`;
+
+  CardContent.appendChild(nome);
+  CardSubtitle.appendChild(posicao);
+  cardMasculino.appendChild(img);
   
-  div_masculino.appendChild(img);
+
+  div_masculino.appendChild(cardMasculino);
 });
 document.body.appendChild(masculino);
 
@@ -98,7 +168,7 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco) {
     div_card.style.width = '230px';
     div_card.style.height = '350px';
     div_card.style.color = '#2e2d31'; 
-    div_card.style.background = '#131313';
+    div_card.style.background = 'black  ';
     div_card.style.overflow = 'hidden';
     div_card.style.borderRadius = '20px';
     div_card.style.padding = '5px';
@@ -185,17 +255,24 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco) {
     container.appendChild(card);
   }
   
- const busca_elenco = (e) => {
+  const busca_elenco = (e) => {
     const pre_string_busca = e.target.value;
     const string_busca = pre_string_busca.toLowerCase();
-    if (string_busca.length >= 3 || string_busca.length == 0){
-        const novo_array = jogadores.filter(
-            (jogador) => {
-                const elenco = jogador.elenco.toLowerCase();
-                return elenco.includes(string_busca);
-            });
-        criarCard(novo_array);
+    
+    if (string_busca.length >= 3 || string_busca.length === 0) {
+      const novo_array = jogadores.filter((jogador) => {
+        const elenco = jogador.elenco.toLowerCase();
+        return elenco.includes(string_busca);
+      });
+  
+      container.innerHTML = '';
+  
+      novo_array.forEach((jogador) => {
+        const card = criarCard(jogador.imagem, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco);
+        container.appendChild(card);
+      });
     }
-}
-
-input.onkeyup = busca_elenco;
+  };
+  
+  input.onkeyup = busca_elenco;
+  
