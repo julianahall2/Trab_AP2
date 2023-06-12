@@ -9,7 +9,7 @@ imagem.position = 'relative';
 legenda.innerHTML = localStorage.getItem('nome');
 legenda.style.alignItems = 'center';
 
-descricao.innerHTML = localStorage.getItem('descricao');
+descricao.innerHTML= localStorage.getItem('descricao');
 
 div.appendChild(descricao);
 div.appendChild(imagem);
