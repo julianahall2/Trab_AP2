@@ -232,18 +232,21 @@ document.body.appendChild(feminino);
 
 const OutraPagina = (evento) => {
   const imagem_clicada = evento.target;
-  localStorage.setItem('nome', imagem_clicada.dataset.nome);
-  localStorage.setItem('posicao', imagem_clicada.dataset.posicao);
-  localStorage.setItem('caminho', imagem_clicada.src);
+  const nome = imagem_clicada.getAttribute('data-nome');
+  const posicao = imagem_clicada.getAttribute('data-posicao');
+  const caminho = imagem_clicada.getAttribute('src');
+  const descricao = imagem_clicada.getAttribute('data-descricao');
 
-  OutraPagina(criarCard)
+  localStorage.setItem('nome', nome);
+  localStorage.setItem('posicao', posicao);
+  localStorage.setItem('caminho', caminho);
+  localStorage.setItem('descricao',descricao);
 
   window.location.href = "detalhes.html";
 }
 
 
-
-function criarCard(imagem, nome, altura, posicao, nascimento, elenco,clica_imagem) {
+function criarCard(imagem, nome, altura, posicao, nascimento, elenco, descricao,clica_imagem) {
     const div_card = document.createElement('div');
     div_card.style.position = 'relative';
     div_card.style.width = '230px';
@@ -261,7 +264,9 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco,clica_image
     imagem_jogador.style.borderRadius = '20px';
     imagem_jogador.dataset.nome = nome;
     imagem_jogador.dataset.posicao = posicao;
+    imagem_jogador.dataset.descricao = descricao;
     imagem_jogador.addEventListener('click', clica_imagem);
+
 
     div_card.appendChild(imagem_jogador);
    
@@ -283,7 +288,10 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco,clica_image
   
     const elenco_jogador = document.createElement('span');
     elenco_jogador.innerHTML = `Elenco: ${elenco}`;
-  
+
+    const descricao_jogador = document.createElement('h5');
+    descricao_jogador.innerHTML = `Descricao: ${descricao}`;
+
     const cardSubtitle = document.createElement('div');
     cardSubtitle.style.display = 'flex';
     cardSubtitle.style.flexDirection = 'column';
@@ -354,10 +362,9 @@ function criarCard(imagem, nome, altura, posicao, nascimento, elenco,clica_image
       container.innerHTML = '';
   
       novo_array.forEach((jogador) => {
-        const card = criarCard(jogador.imagem, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco);
-        container.appendChild(card);
-
-        imagem_jogador.addEventListener('click', () => OutraPagina(imagem_jogador));
+        const card = criarCard(jogador.imagem, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco, OutraPagina);
+        container.appendChild(card)
+      
       });
     } 
   };
