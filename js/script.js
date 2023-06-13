@@ -2,6 +2,7 @@ const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
 
+
 const group = document.createElement('div');
 group.style.display = 'flex';
 group.style.lineHeight ='28px';
@@ -54,6 +55,7 @@ const masculino = document.createElement('section');
 const div_masculino = document.createElement('div');
 div_masculino.style.display = 'grid';
 div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+div_masculino.style.maxWidth = '1200px';
 
 masculino.appendChild(div_masculino);
 
@@ -145,6 +147,7 @@ const feminino = document.createElement('section');
 const div_feminino = document.createElement('div');
 div_feminino.style.display = 'grid';
 div_feminino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+div_feminino.style.maxWidth = '1200px';
 feminino.appendChild(div_feminino);
 
 const ElencoFeminino = document.createElement('h2')
@@ -371,4 +374,43 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
   };
   
   input.onkeyup = busca_posicao;
+  
+
+  function adjustLayout() {
+    const screenWidth = window.innerWidth;
+  
+    if (screenWidth <= 768) {
+      container.style.gridTemplateColumns = '1fr 1fr';
+      div_masculino.style.gridTemplateColumns = '1fr 1fr';
+      div_feminino.style.gridTemplateColumns = '1fr 1fr';
+    } else if (screenWidth <= 1024) {
+      container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr';
+      div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr';
+      div_feminino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr';
+    } else {
+      container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+      div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+      div_feminino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+    }
+  }
+  
+  function adjustMaxWidth() {
+    const screenWidth = window.innerWidth;
+  
+    if (screenWidth <= 1200) {
+      container.style.maxWidth = `${screenWidth}px`;
+    } else {
+      container.style.maxWidth = '1200px';
+    }
+  }
+  
+  // Event listeners for adjusting layout on window resize
+  window.addEventListener('resize', () => {
+    adjustLayout();
+    adjustMaxWidth();
+  });
+  
+  // Initial adjustments on page load
+  adjustLayout();
+  adjustMaxWidth();
   
