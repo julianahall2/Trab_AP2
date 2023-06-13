@@ -56,7 +56,10 @@ const voltar = document.createElement('button');
 voltar.style.backgroundColor = 'gray';
 voltar.style.borderRadius = '40px';
 
-
+voltar.textContent = 'Voltar para página inicial';
+voltar.addEventListener('click', function() {
+  window.history.back();
+});
 
 div.appendChild(voltar);
 
