@@ -1,6 +1,9 @@
 const container = document.createElement('div');
 container.style.display = 'grid';
-container.style.gridTemplateColumns = '1fr 1fr';
+container.style.width = '100%';
+container.style.height = '100%';
+container.style.justifyContent =' center';
+container.style.alignItems ='center';
 
 
 
@@ -47,7 +50,7 @@ divDescricao.style.fontWeight = '900';
 divDescricao.appendChild(imagem);
 div.appendChild(legenda);
 div.appendChild(descricao);
-document.body.appendChild(divDescricao);
+
 
 container.appendChild(divDescricao);
 container.appendChild(div);
