@@ -108,7 +108,8 @@ jogadoresMasculinos.forEach(jogador => {
 
   const img= document.createElement('img');
   img.src = jogador.imagem;
-
+  img.setAttribute("alt", "Imagens dos jogadores");
+  
   const nome = document.createElement('h3');
   nome.style.position = 'relative';
   nome.style.color = 'black';
@@ -209,6 +210,8 @@ const CardContent = document.createElement('div');
  
   const img= document.createElement('img');
   img.src = jogador.imagem;
+  img.setAttribute("alt", "Imagens dos jogadores");
+   
 
   CardSubtitle.appendChild(nome);
   CardSubtitle.appendChild(posicao);
@@ -254,12 +257,14 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
     imagem_jogador.dataset.nome = nome;
     imagem_jogador.dataset.posicao = posicao;
     imagem_jogador.dataset.descricao = descricao;
+    imagem_jogador.setAttribute("alt", "Imagens dos jogadores");
+   
 
     imagem_jogador.addEventListener('click', clica_imagem);
-
+    
 
     div_card.appendChild(imagem_jogador);
-
+  
     const descricao_jogador = document.createElement('h5');
 
     descricao_jogador.innerHTML= descricao;
