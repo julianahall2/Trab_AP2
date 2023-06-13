@@ -109,7 +109,7 @@ jogadoresMasculinos.forEach(jogador => {
   const img= document.createElement('img');
   img.src = jogador.imagem;
   img.setAttribute("alt", "Imagens dos jogadores");
-  
+
   const nome = document.createElement('h3');
   nome.style.position = 'relative';
   nome.style.color = 'black';
@@ -370,4 +370,15 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
 
 
   
+  fetch('https://julianahall2.github.io/Trab_AP2/detalhes.html', {
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()'
+    }
+  })
+    .then(response => {
+      // Lida com a resposta da solicitação aqui
+    })
+    .catch(error => {
+      // Lida com erros de solicitação aqui
+    });
   
