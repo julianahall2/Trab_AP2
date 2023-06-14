@@ -1,6 +1,10 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+container.style.maxWidth = '1200px';
+container.style.alignContent = 'center';
+container.style.alignItems = 'center';
+container.style.marginLeft = '20px';
 
 
 const group = document.createElement('div');
@@ -203,9 +207,11 @@ const CardContent = document.createElement('div');
   nome.style.fontWeight = 'bold';
   nome.style.textAlign = 'center';
   nome.innerHTML = jogador.nome;
+  nome.style.fontFamily = 'Inconsolata';
 
   const posicao = document.createElement('p');
   posicao.innerHTML = `Posição: ${jogador.posicao}`;
+  posicao.style.fontFamily = 'Inconsolata';
 
  
   const img= document.createElement('img');
@@ -228,17 +234,21 @@ const OutraPagina = (evento) => {
   const nome = imagem_clicada.getAttribute('data-nome');
   const posicao = imagem_clicada.getAttribute('data-posicao');
   const caminho = imagem_clicada.getAttribute('src');
+  const altura = imagem_clicada.getAttribute('data-altura');
+  const nomeCompleto = imagem_clicada.getAttribute('data-nome_completo')
 
   localStorage.setItem('nome', nome);
   localStorage.setItem('posicao', posicao);
   localStorage.setItem('caminho', caminho);
   localStorage.setItem('descricao',descricao);
+  localStorage.setItem('altura',altura);
+  localStorage.setItem('Nome Completo',nomeCompleto)
 
   window.location.href = "detalhes.html";
   }
   
 
-function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
+function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');
     div_card.style.position = 'relative';
     div_card.style.width = '230px';
@@ -257,13 +267,18 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
     imagem_jogador.dataset.nome = nome;
     imagem_jogador.dataset.posicao = posicao;
     imagem_jogador.dataset.descricao = descricao;
+    imagem_jogador.dataset.altura = altura;
+    imagem_jogador.dataset.nome_completo = nome_completo;
     imagem_jogador.setAttribute("alt", "Imagens dos jogadores");
-   
+    
 
     imagem_jogador.addEventListener('click', clica_imagem);
     
 
     div_card.appendChild(imagem_jogador);
+    const nome_completo_jogador = document.createElement('h5');
+    nome_completo_jogador.innerHTML = nome_completo;
+  
   
     const descricao_jogador = document.createElement('h5');
 
@@ -274,18 +289,22 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
     nome_jogador.style.marginLeft = '65px';
     nome_jogador.style.color = 'black';
     nome_jogador.style.fontWeight = 'bold';
-    
+
+
     const altura_jogador = document.createElement('span');
     altura_jogador.innerHTML = `Altura: ${altura}`;
-  
+
+
     const posicao_jogador = document.createElement('span');
     posicao_jogador.innerHTML = `Posição: ${posicao}`;
-  
+    posicao_jogador.style.fontFamily = 'Inconsolata';
+
     const data_jogador = document.createElement('span');
-    data_jogador.innerHTML = `Data de nascimento: ${nascimento}`;
-  
+
+
     const elenco_jogador = document.createElement('span');
     elenco_jogador.innerHTML = `Elenco: ${elenco}`;
+
 
     const cardSubtitle = document.createElement('div');
     cardSubtitle.style.display = 'flex';
@@ -340,7 +359,7 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
   
   for (let i = 0; i < jogadores.length; i++) {
     const jogador = jogadores[i];
-    const card = criarCard(jogador.imagem, jogador.descricao, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco,OutraPagina);
+    const card = criarCard(jogador.imagem, jogador.nome_completo, jogador.descricao, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco,OutraPagina);
     container.appendChild(card);
   }
   
@@ -357,7 +376,7 @@ function criarCard(imagem, descricao,nome, altura, posicao, nascimento, elenco,c
       container.innerHTML = '';
   
       novo_array.forEach((jogador) => {
-        const card = criarCard(jogador.imagem, jogador.descricao, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco, OutraPagina);
+        const card = criarCard(jogador.imagem,jogador.nome_completo, jogador.descricao, jogador.nome, jogador.altura, jogador.posicao, jogador.nascimento, jogador.elenco, OutraPagina);
         container.appendChild(card)
       
       });
