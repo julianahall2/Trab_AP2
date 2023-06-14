@@ -1,10 +1,8 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
-container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
-container.style.maxWidth = '768px';
+container.style.gridTemplateColumns = '1fr 1fr';
 container.style.alignContent = 'center';
 container.style.alignItems = 'center';
-container.style.marginLeft = '20px';
 
 
 const group = document.createElement('div');
@@ -14,7 +12,7 @@ group.style.marginBottom = '10px';
 group.style.position ='relative';
 group.style.maxWidth = '190px';
 group.classList.add('group');
-group.style.flexDirection = 'flex-start'
+group.style.flexDirection = 'flex-start';
 
 const input = document.createElement('input');
 input.style.width= '100%';
