@@ -19,20 +19,25 @@ h1 {
    }
 
   @media screen and (min-width: 769px) {
-    #container {
+    #container, .div_masculino , .div_feminino{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
       max-width: 1024px !important;
       align-items: center;
       align-content: center;
+      place-items: center !important;
+      height: 100vh !important;
+    
     }
   }
 
   @media screen and (min-width: 1025px) {
-    #container {
+    #container, .div_masculino, .div_feminino{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
       max-width: 1200px !important;
       align-items: center;
       align-content: center;
+      place-items: center !important;
+      height: 100vh !important;
     }
   }
   

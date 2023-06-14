@@ -3,6 +3,9 @@ container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr';
 container.style.alignContent = 'center';
 container.style.alignItems = 'center';
+container.style.alignSelf = 'center';
+container.style.justifyContent  = 'center';
+
 
 
 const group = document.createElement('div');
@@ -41,8 +44,9 @@ const jogadoresFemininos = jogadores.filter(jogador => jogador.elenco === 'femin
 const masculino = document.createElement('section');
 
 const div_masculino = document.createElement('div');
+div_masculino.className = 'div_masculino';
 div_masculino.style.display = 'grid';
-div_masculino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+div_masculino.style.gridTemplateColumns = '1fr 1fr ';
 div_masculino.style.maxWidth = '1200px';
 
 masculino.appendChild(div_masculino);
@@ -134,8 +138,9 @@ document.body.appendChild(masculino);
 const feminino = document.createElement('section');
 
 const div_feminino = document.createElement('div');
+div_feminino.className = 'div_feminino';
 div_feminino.style.display = 'grid';
-div_feminino.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
+div_feminino.style.gridTemplateColumns = '1fr 1fr ';
 div_feminino.style.maxWidth = '1200px';
 feminino.appendChild(div_feminino);
 

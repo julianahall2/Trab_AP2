@@ -2,14 +2,22 @@ body {
     background-color: 
          #171616
     }
-    @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
      .container {
-     display:flex !important;
-     align-items: center;
-     align-content: center;
-     position: relative;
+      display:flex !important;
+      align-items: center;
+      align-content: center;
+      position: relative;
+      
      }
-   }
+}
+@media only screen and (max-width: 768px){
+      .divDescricao{
+          display: none !important;
+     }
+}
+    
+
    
    
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');
