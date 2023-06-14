@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr 1fr 1fr';
-container.style.maxWidth = '1200px';
+container.style.maxWidth = '768px';
 container.style.alignContent = 'center';
 container.style.alignItems = 'center';
 container.style.marginLeft = '20px';

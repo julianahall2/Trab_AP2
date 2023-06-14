@@ -18,8 +18,23 @@ h1 {
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
 
-@media only screen and (min-width: 768px) {
 
-}
+  
+  /* Estilos para tablets */
+  @media screen and (min-width: 769px) {
+    .container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      max-width: 1024px;
+    }
+  }
+  
+  /* Estilos para desktops */
+  @media screen and (min-width: 1025px) {
+    .container {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      max-width: 1200px;
+    }
+  }
+  
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');
