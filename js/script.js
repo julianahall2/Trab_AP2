@@ -1,10 +1,8 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr';
-container.style.alignContent = 'center';
 container.style.alignItems = 'center';
-container.style.alignSelf = 'center';
-container.style.justifyContent  = 'center';
+container.style.maxWidth = '1200px';
 
 
 

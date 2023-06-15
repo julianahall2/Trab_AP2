@@ -18,26 +18,17 @@ h1 {
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
 
-  @media screen and (min-width: 769px) {
-    #container, .div_masculino , .div_feminino{
+   @media screen and (min-width: 769px) {
+    #container{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
-      max-width: 1024px !important;
-      align-items: center;
-      align-content: center;
-      place-items: center !important;
-      height: 100vh !important;
-    
+   
     }
   }
 
   @media screen and (min-width: 1025px) {
-    #container, .div_masculino, .div_feminino{
+    #container{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
-      max-width: 1200px !important;
-      align-items: center;
-      align-content: center;
-      place-items: center !important;
-      height: 100vh !important;
+      margin: auto !important;
     }
   }
   

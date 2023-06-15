@@ -1,7 +1,7 @@
 const container = document.createElement('div');
 container.className = 'container';
 container.style.display = 'grid';
-container.style.gap = '200px';
+
 container.style.width = '100%'
 container.style.height = '100%';
 container.style.justifyContent =' center';
@@ -9,14 +9,12 @@ container.style.alignItems ='center';
 
 const div = document.createElement('div');
 div.className = 'div';
-div.style.background = '#fff';
+div.style.background = 'white';
 div.style.border = '3px solid ';
 div.style.width = '700px';
 div.style.height = '800px';
 div.style.borderRadius = '10px';
-const imagem = document.createElement('img');
-imagem.src = localStorage.getItem('caminho');
-imagem.style.width = 'fit-content';
+
 
 const descricao = document.createElement('h5');
 descricao.innerHTML = `Descrição do jogador: ${localStorage.getItem('descricao')}`;
@@ -46,12 +44,16 @@ InfoAdd2.style.fontFamily = 'Inconsolata';
 
 const divDescricao = document.createElement('div');
 divDescricao.className = 'divDescricao';
-divDescricao.style.alignItems = 'center';
-divDescricao.style.justifyContent = 'center';
-divDescricao.style.color = 'black';
-divDescricao.style.width = '230px';
-divDescricao.style.height = '55%';
-divDescricao.style.border = '1px solid black';
+divDescricao.style.background = 'black';
+divDescricao.style.border = '3px solid ';
+divDescricao.style.width = '700px';
+divDescricao.style.height = '800px';
+divDescricao.style.borderRadius = '10px';
+
+
+const imagem = document.createElement('img');
+imagem.src = localStorage.getItem('caminho');
+imagem.style.width = 'fit-content';
 
 
 divDescricao.appendChild(imagem);
