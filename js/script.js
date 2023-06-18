@@ -1,10 +1,17 @@
 const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr';
+<<<<<<< HEAD
 container.style.maxWidth = '1200px';
 container.style.gap = '5px';
 container.style.marginTop = '200px';
 container.style.alignItems = 'center';
+=======
+container.style.alignItems = 'center';
+container.style.maxWidth = '1200px';
+
+
+>>>>>>> 0eb481502bc2bacbebd2a96ac385866ca893a5ed
 
 const group = document.createElement('div');
 group.style.display = 'flex';
