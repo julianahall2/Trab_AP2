@@ -1,0 +1,81 @@
+body {
+    background-color: black;
+    font-family:'Playfair Display';
+  
+}
+h1 {
+    color: black;
+    text-align: center;
+}
+   
+.input::placeholder {
+    color: #9e9ea7;
+   }
+   
+.input:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+
+  
+   .menu {
+    display: flex;
+  }
+  
+  .menu a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Estilos do menu hambúrguer */
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: #000;
+  }
+  
+  /* Estilos do menu dropdown */
+  .nav-itens{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .nav-itens.show {
+    display: block;
+  }
+  
+  .nav-itens a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    #container{
+      grid-template-columns: 1fr 1fr 1fr 1fr !important;
+     
+    }
+    }
+  
+
+  @media screen and (min-width: 1025px){
+    #container{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
+      margin-left: 20px;
+    
+    }
+  }
+  
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');

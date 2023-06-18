@@ -24,6 +24,7 @@ descricao.style.color = 'black';
 descricao.style.width = '550px';
 descricao.style.marginLeft = ' 100px';
 descricao.style.fontFamily = 'Inconsolata';
+
 const legenda = document.createElement('h5');
 legenda.innerHTML = localStorage.getItem('Nome Completo');
 legenda.style.textAlign = 'center';
@@ -37,12 +38,19 @@ InfoAdd.style.color = 'black';
 InfoAdd.style.width = '400px';
 InfoAdd.style.marginLeft = ' 100px';
 InfoAdd.style.fontFamily = 'Inconsolata';
+
 const InfoAdd2 = document.createElement('h5');
 InfoAdd2.innerHTML = `Altura do Jogador: ${localStorage.getItem('altura')}`;
 InfoAdd2.style.color = 'black';
 InfoAdd2.style.width = '400px';
 InfoAdd2.style.marginLeft = ' 100px';
 InfoAdd2.style.fontFamily = 'Inconsolata';
+
+const InfoAdd3 = document.createElement('h5');
+InfoAdd3.innerHTML = `Nascimento do Jogador: ${localStorage.getItem('Data de Nascimento')}`;
+InfoAdd3.style.color = 'black';
+InfoAdd3.style.width = '400px';
+InfoAdd3.style.marginLeft = ' 100px';
 
 const divDescricao = document.createElement('div');
 divDescricao.className = 'divDescricao';
@@ -55,19 +63,21 @@ divDescricao.style.border = '1px solid black';
 
 
 divDescricao.appendChild(imagem);
+
 div.appendChild(legenda);
 div.appendChild(descricao);
 div.appendChild(InfoAdd);
 div.appendChild(InfoAdd2);
+div.appendChild(InfoAdd3);
 
 container.appendChild(divDescricao);
 container.appendChild(div);
 
 const voltar = document.createElement('button');
-voltar.style.backgroundColor = 'gray';
-voltar.style.borderRadius = '40px';
+voltar.style.borderRadius = '40px solid  black';
 voltar.style.marginLeft = '250px';
 voltar.style.marginTop = '40px';
+voltar.style.color = 'black';
 
 voltar.textContent = 'Voltar para página inicial';
 voltar.addEventListener('click', function() {
