@@ -9,7 +9,7 @@ Header.style.top = '0';
 Header.style.left = '0';
 Header.style.width = '100%';
 Header.style.zIndex = '1';
-Header.style.maxWidth = '1200px';
+
 
 const NavBar = document.createElement('nav');
 NavBar.style.display = 'flex';
@@ -131,3 +131,32 @@ const CardContent = document.createElement('div');
   div_feminino.appendChild(cardFeminino);
 });
 document.body.appendChild(feminino);
+
+
+
+const footer = document.createElement('footer');
+footer.setAttribute('id', 'botafogo-footer');
+footer.style.backgroundColor = '#f8f8f8';
+footer.style.position = 'absolute';
+footer.style.width = '100%';
+footer.style.padding = '20px 0';
+
+const botafogoLink = document.createElement('a');
+botafogoLink.setAttribute('href', 'https://www.botafogo.com.br');
+botafogoLink.setAttribute('target', '_blank');
+botafogoLink.textContent = 'Visite o site oficial do Botafogo';
+botafogoLink.style.color = '#333';
+botafogoLink.style.fontWeight = 'bold';
+botafogoLink.style.textDecoration = 'none';
+
+const additionalInfo = document.createElement('p');
+additionalInfo.textContent = 'Informações adicionais  podem ser encontradas no site oficial do clube.';
+additionalInfo.style.color = '#666';
+additionalInfo.style.fontStyle = 'italic';
+
+footer.style.textAlign = 'center';
+footer.style.fontFamily = 'Arial, sans-serif';
+
+footer.appendChild(botafogoLink);
+footer.appendChild(additionalInfo);
+document.body.appendChild(footer);
