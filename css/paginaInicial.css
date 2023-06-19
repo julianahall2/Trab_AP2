@@ -19,34 +19,6 @@ h1 {
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
 
-/* Estilos para o menu de navegação quando a tela é menor que 768px */
-.nav-items {
-  display: block;
-}
-
-.nav-items.show {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 6px; /* Ajuste este valor conforme necessário */
-  right: 100px; /* Ajuste este valor conforme necessário */
-  background: transparent;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-
-/* Estilos para telas maiores que 767px */
-@media screen and (min-width: 768px) {
-  .menu-btn {
-    display: none!important;
-  }
-
-  .nav-items {
-    display: block !important;
-    justify-content: center;
-  }
-}
 
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {

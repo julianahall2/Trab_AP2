@@ -50,12 +50,6 @@ Menu.style.display = 'flex';
 Menu.style.justifyContent = 'flex-end';
 Menu.classList.add('menu');
 
-
-const NavBar = document.createElement('nav');
-NavBar.style.display = 'flex';
-NavBar.style.justifyContent = 'flex-end';
-NavBar.classList.add('nav-items');
-
 const paginaElencoMasc = document.createElement('div');
 paginaElencoMasc.id = 'paginaElencoMasc';
 paginaElencoMasc.right = '80px';
@@ -86,7 +80,7 @@ paginaElencoFem.style.transition = '.3s ease';
 
 const LinkFem = document.createElement('a');
 LinkFem.href = 'feminino.html';
-LinkFem.id = '';
+LinkFem.id = 'linkfem';
 LinkFem.textContent = 'Elenco Feminino';
 
 LinkMasc.style.margin = '0 10px';
@@ -96,26 +90,6 @@ LinkFem.style.textDecoration = 'none';
 LinkMasc.style.color = '#333';
 LinkFem.style.color = '#333';
 
-const menuBtn = document.createElement('button');
-menuBtn.innerHTML = '&#9776;';
-menuBtn.style.fontSize = '24px';
-menuBtn.style.display = 'block';
-menuBtn.style.border = 'none';
-menuBtn.style.background = 'transparent';
-menuBtn.style.cursor = 'pointer';
-menuBtn.style.marginRight = '10px';
-menuBtn.classList.add('menu-btn');
-
-NavBar.classList.add('nav-items');
-
-menuBtn.addEventListener('click', () => {
-  NavBar.classList.toggle('show');
-});
-
-
-
-NavBar.appendChild(menuBtn);
-
 input.style.marginRight = '10px';
 
 paginaElencoFem.appendChild(LinkFem);
@@ -124,12 +98,8 @@ paginaElencoMasc.appendChild(LinkMasc);
 Menu.appendChild(paginaElencoMasc);
 Menu.appendChild(paginaElencoFem);
 
-
-
 Header.appendChild(group);
 Header.appendChild(Menu);
-
-
 
 const OutraPagina = (evento) => {
   const imagem_clicada = evento.target;
@@ -311,4 +281,3 @@ footer.style.fontFamily = 'Arial, sans-serif';
 footer.appendChild(botafogoLink);
 footer.appendChild(additionalInfo);
 document.body.appendChild(footer);
-
