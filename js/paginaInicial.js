@@ -26,7 +26,7 @@ input.style.outline = 'none';
 input.style.backgroundColor = '#f3f3f4';
 input.style.color = '#0d0c22';
 input.style.transition = '.3s ease';
-input.setAttribute('placeholder', 'Buscar');
+input.setAttribute('placeholder', 'Buscar ');
 input.setAttribute('type', 'search');
 input.classList.add('input');
 
@@ -38,11 +38,18 @@ Header.style.padding = '20px';
 Header.style.display = 'grid';
 Header.style.gridTemplateColumns = '1fr auto 1fr';
 Header.style.alignItems = 'center';
-Header.style.position = 'fixed';
+Header.style.position = 'absolute';
 Header.style.top = '0';
 Header.style.left = '0';
-Header.style.width = '100%';
 Header.style.zIndex = '1';
+Header.style.width = '100%';
+Header.style.margin = '0 auto';
+
+const Menu = document.createElement('nav');
+Menu.style.display = 'flex';
+Menu.style.justifyContent = 'flex-end';
+Menu.classList.add('menu');
+
 
 const NavBar = document.createElement('nav');
 NavBar.style.display = 'flex';
@@ -51,7 +58,7 @@ NavBar.classList.add('nav-items');
 
 const paginaElencoMasc = document.createElement('div');
 paginaElencoMasc.id = 'paginaElencoMasc';
-paginaElencoMasc.style.marginLeft = '40px';
+paginaElencoMasc.right = '80px';
 paginaElencoMasc.style.padding = '20px';
 paginaElencoMasc.style.border = '2px solid trasparent';
 paginaElencoMasc.style.borderRadius = '8px';
@@ -62,10 +69,9 @@ paginaElencoMasc.style.transition = '.3s ease';
 
 const LinkMasc = document.createElement('a');
 LinkMasc.href = 'masculino.html';
-LinkMasc.id = 'a';
+LinkMasc.id = 'linkmasc';
 LinkMasc.textContent = 'Elenco Masculino';
 
-paginaElencoMasc.appendChild(LinkMasc);
 
 const paginaElencoFem = document.createElement('div');
 paginaElencoFem.id = 'paginaElencoFem';
@@ -80,7 +86,7 @@ paginaElencoFem.style.transition = '.3s ease';
 
 const LinkFem = document.createElement('a');
 LinkFem.href = 'feminino.html';
-LinkFem.id = 'a';
+LinkFem.id = '';
 LinkFem.textContent = 'Elenco Feminino';
 
 LinkMasc.style.margin = '0 10px';
@@ -99,8 +105,8 @@ menuBtn.style.background = 'transparent';
 menuBtn.style.cursor = 'pointer';
 menuBtn.style.marginRight = '10px';
 menuBtn.classList.add('menu-btn');
-Header.appendChild(menuBtn);
 
+NavBar.classList.add('nav-items');
 
 menuBtn.addEventListener('click', () => {
   NavBar.classList.toggle('show');
@@ -108,15 +114,20 @@ menuBtn.addEventListener('click', () => {
 
 
 
+NavBar.appendChild(menuBtn);
+
 input.style.marginRight = '10px';
 
 paginaElencoFem.appendChild(LinkFem);
+paginaElencoMasc.appendChild(LinkMasc);
 
-NavBar.appendChild(paginaElencoMasc);
-NavBar.appendChild(paginaElencoFem);
+Menu.appendChild(paginaElencoMasc);
+Menu.appendChild(paginaElencoFem);
+
+
 
 Header.appendChild(group);
-Header.appendChild(NavBar);
+Header.appendChild(Menu);
 
 
 
@@ -274,4 +285,30 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
   input.onkeyup = busca_posicao;
   
 
+const footer = document.createElement('footer');
+footer.setAttribute('id', 'botafogo-footer');
+footer.style.backgroundColor = '#f8f8f8';
+footer.style.position = 'absolute';
+footer.style.width = '100%';
+footer.style.padding = '20px 0';
+
+const botafogoLink = document.createElement('a');
+botafogoLink.setAttribute('href', 'https://www.botafogo.com.br');
+botafogoLink.setAttribute('target', '_blank');
+botafogoLink.textContent = 'Visite o site oficial do Botafogo';
+botafogoLink.style.color = '#333';
+botafogoLink.style.fontWeight = 'bold';
+botafogoLink.style.textDecoration = 'none';
+
+const additionalInfo = document.createElement('p');
+additionalInfo.textContent = 'Informações adicionais  podem ser encontradas no site oficial do clube.';
+additionalInfo.style.color = '#666';
+additionalInfo.style.fontStyle = 'italic';
+
+footer.style.textAlign = 'center';
+footer.style.fontFamily = 'Arial, sans-serif';
+
+footer.appendChild(botafogoLink);
+footer.appendChild(additionalInfo);
+document.body.appendChild(footer);
 

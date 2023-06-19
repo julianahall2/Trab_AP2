@@ -9,6 +9,8 @@ Header.style.top = '0';
 Header.style.left = '0';
 Header.style.width = '100%';
 Header.style.zIndex = '1';
+Header.style.maxWidth = '1200px';
+
 
 const NavBar = document.createElement('nav');
 NavBar.style.display = 'flex';
@@ -22,7 +24,7 @@ Voltar.style.height = '20px';
 Voltar.style.marginLeft = '50px';
 Voltar.textContent = 'Voltar';
 Voltar.style.right = '30px';  
-Voltar.style.position = 'fixed';
+Voltar.style.position = 'absolute';
 Voltar.addEventListener('click', function() {
   window.history.back();
 });

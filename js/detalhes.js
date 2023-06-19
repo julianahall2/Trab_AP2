@@ -61,8 +61,8 @@ divDescricao.style.borderRadius = '10px';
 
 const imagem = document.createElement('img');
 imagem.src = localStorage.getItem('caminho');
-imagem.style.width = 'fit-content';
-
+imagem.style.width = 'auto';
+imagem.style.justifyContent = 'center';
 
 divDescricao.appendChild(imagem);
 

@@ -19,63 +19,58 @@ h1 {
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
 
-  
-  .menu {
-    display: flex;
+/* Estilos para o menu de navegação quando a tela é menor que 768px */
+.nav-items {
+  display: block;
+}
+
+.nav-items.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 6px; /* Ajuste este valor conforme necessário */
+  right: 100px; /* Ajuste este valor conforme necessário */
+  background: transparent;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+
+/* Estilos para telas maiores que 767px */
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none!important;
   }
-  
-  .menu a {
-    color: #000;
-    text-decoration: none;
-    margin-left: 20px;
+
+  .nav-items {
+    display: block !important;
+    justify-content: center;
   }
-  
-  /* Estilos do menu hambúrguer */
-  .menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    color: #000;
-  }
-  
-  /* Estilos do menu dropdown */
-  .nav-itens{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .nav-itens.show {
-    display: block;
-  }
-  
-  .nav-itens a {
-    display: block;
-    color: #000;
-    text-decoration: none;
-    margin-bottom: 10px;
-  }
-  
+}
+
 
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
      
     }
+    #Header{
+      width: 100% !important;
+    }
     }
   
 
-  @media screen and (min-width: 1025px){
+  @media screen and (min-width: 1025px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
       margin-left: 20px;
-    
+
     }
-  }
+    #Header{
+      width: 100% !important;
+    }
+    }
+  
   
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');
