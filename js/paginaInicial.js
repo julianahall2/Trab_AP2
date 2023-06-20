@@ -2,9 +2,9 @@ const Header = document.getElementById('header');
 Header.style.backgroundColor = 'white';
 Header.style.padding = '20px';
 Header.style.display = 'grid';
-Header.style.gridTemplateColumns = '1fr auto 1fr';
+Header.style.gridTemplateColumns = '1fr 1fr 1fr';
 Header.style.alignItems = 'center';
-Header.style.position = 'absolute';
+Header.style.position = 'fixed';
 Header.style.top = '0';
 Header.style.left = '0';
 Header.style.zIndex = '1';
@@ -15,8 +15,8 @@ const group = document.createElement('div');
 group.style.display = 'flex';
 group.style.lineHeight = '28px';
 group.style.position = 'relative';
-group.style.maxWidth = '190px';
-group.style.marginRight = '300px';
+group.style.width = '200px';
+group.style.marginLeft = '100px';
 group.classList.add('group');
 
 const input = document.createElement('input');
@@ -36,19 +36,6 @@ input.setAttribute('type', 'search');
 input.classList.add('input');
 
 group.appendChild(input);
-
-const Header = document.getElementById('header');
-Header.style.backgroundColor = 'white';
-Header.style.padding = '20px';
-Header.style.display = 'grid';
-Header.style.gridTemplateColumns = '1fr auto 1fr';
-Header.style.alignItems = 'center';
-Header.style.position = 'absolute';
-Header.style.top = '0';
-Header.style.left = '0';
-Header.style.zIndex = '1';
-Header.style.width = '100%';
-Header.style.margin = '0 auto';
 
 const Menu = document.createElement('nav');
 Menu.style.display = 'flex';
@@ -70,7 +57,6 @@ const LinkMasc = document.createElement('a');
 LinkMasc.href = 'masculino.html';
 LinkMasc.id = 'linkmasc';
 LinkMasc.textContent = 'Elenco Masculino';
-
 
 const paginaElencoFem = document.createElement('div');
 paginaElencoFem.id = 'paginaElencoFem';
@@ -135,6 +121,8 @@ container.style.maxWidth = '1200px';
 container.style.gap = '5px';
 container.style.marginTop = '200px';
 container.style.alignItems = 'center';
+container.margin = ' 0 auto';
+container.marginLeft = '30px';
 
 function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');
@@ -269,7 +257,7 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
   
 
 const footer = document.createElement('footer');
-footer.setAttribute('id', 'botafogo-footer');
+footer.setAttribute('id', 'footer');
 footer.style.backgroundColor = '#f8f8f8';
 footer.style.position = 'absolute';
 footer.style.width = '100%';
