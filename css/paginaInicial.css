@@ -20,11 +20,14 @@ h1 {
    }
 
 @media screen and (max-width: 768px) {
+    #Header {
+      width: fit-content !important;
+      }
     .group {
-      margin-right: 150px;
+      margin-right: 150px !important;
     }
     .menu {
-      flex-direction: column;
+      flex-direction: column !important;
     }
   }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
