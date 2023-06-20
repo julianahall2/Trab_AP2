@@ -14,13 +14,17 @@ h1 {
 .input::placeholder {
     color: #9e9ea7;
    }
-   
+  
 .input:focus, input:hover {
     outline: none;
     border-color: rgba(234,76,137,0.4);
     background-color: #fff;
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
+
+.hamburger-button:hover{
+  background-color: black;
+}
 
 @media screen and (max-width: 767px) {
   .menu{
@@ -42,8 +46,10 @@ h1 {
     margin-left: 30px;
     justify-content: center !important;
   }
+  .hamburger-button {
+    display: none !important;
+  }
 }
-
 
 
 /* Estilos para telas a partir de 1024px */
@@ -59,6 +65,9 @@ h1 {
   .menu{
     margin-right: 50px;
     justify-content: flex-end !important;
+  }
+  .hamburger-button {
+    display: none !important;
   }
 }
 
@@ -83,4 +92,5 @@ h1 {
     }
   
 
+    
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');

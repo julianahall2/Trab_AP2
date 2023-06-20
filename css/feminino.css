@@ -6,7 +6,9 @@ body{
     .div_feminino{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
     }
+  
     }
+  
   
 
   @media screen and (min-width: 1025px){

@@ -1,8 +1,7 @@
 const container = document.createElement('div');
 container.className = 'container';
 container.style.display = 'grid';
-
-container.style.width = '100%'
+container.style.gridTemplateColumns = '1fr 1fr';
 container.style.height = '100%';
 container.style.justifyContent =' center';
 container.style.alignItems ='center';

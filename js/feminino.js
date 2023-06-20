@@ -20,9 +20,8 @@ Voltar.style.color = 'black';
 Voltar.style.borderRadius = '5px';
 Voltar.style.width = '60px';
 Voltar.style.height = '20px';
-Voltar.style.marginLeft = '50px';
 Voltar.textContent = 'Voltar';
-Voltar.style.right = '30px';
+Voltar.style.right = '70px';
 Voltar.style.position = 'absolute';
 Voltar.addEventListener('click', function() {
   window.history.back();

@@ -12,8 +12,8 @@ body {
      }
 }
 @media only screen and (max-width: 768px){
-      .divDescricao{
-          display: none !important;
+      .container{
+          grid-template-columns: 1fr 1fr 1fr;
      }
 }
     

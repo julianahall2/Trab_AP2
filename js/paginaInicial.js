@@ -15,8 +15,8 @@ const group = document.createElement('div');
 group.style.display = 'flex';
 group.style.lineHeight = '28px';
 group.style.position = 'relative';
-group.style.width = '200px';
-group.style.marginLeft = '100px';
+group.style.width = '150px';
+group.style.marginLeft = '30px';
 group.classList.add('group');
 
 const input = document.createElement('input');
@@ -91,6 +91,80 @@ Menu.appendChild(paginaElencoFem);
 
 Header.appendChild(group);
 Header.appendChild(Menu);
+
+const hamburgerButton = document.createElement('button');
+hamburgerButton.style.display = 'block'; 
+hamburgerButton.classList.add('hamburger-button');
+hamburgerButton.style.border = '2px solid transparent';
+hamburgerButton.textContent = '☰'; 
+hamburgerButton.style.backgroundColor = 'transparent';
+hamburgerButton.style.cursor = 'pointer';
+hamburgerButton.style.position = 'absolute';
+hamburgerButton.style.marginTop = '60px'
+hamburgerButton.style.right = '60px';
+Header.appendChild(hamburgerButton);
+
+let menuVisible = false; 
+let menuAdded = false; 
+
+function clickMenu() {
+  if (!menuAdded) {
+    const paginaElencoMasc = document.createElement('div');
+    paginaElencoMasc.id = 'paginaElencoMasc';
+    paginaElencoMasc.right = '80px';
+    paginaElencoMasc.style.padding = '20px';
+    paginaElencoMasc.style.border = '2px solid transparent';
+    paginaElencoMasc.style.borderRadius = '8px';
+    paginaElencoMasc.style.outline = 'none';
+    paginaElencoMasc.style.backgroundColor = '#f3f3f4';
+    paginaElencoMasc.style.color = '#0d0c22';
+    paginaElencoMasc.style.transition = '.3s ease';
+
+    const LinkMasc = document.createElement('a');
+    LinkMasc.href = 'masculino.html';
+    LinkMasc.id = 'linkmasc';
+    LinkMasc.textContent = 'Elenco Masculino';
+
+    const paginaElencoFem = document.createElement('div');
+    paginaElencoFem.id = 'paginaElencoFem';
+    paginaElencoFem.style.marginLeft = '5px';
+    paginaElencoFem.style.padding = '20px';
+    paginaElencoFem.style.border = '2px solid transparent';
+    paginaElencoFem.style.borderRadius = '8px';
+    paginaElencoFem.style.outline = 'none';
+    paginaElencoFem.style.backgroundColor = '#f3f3f4';
+    paginaElencoFem.style.color = '#0d0c22';
+    paginaElencoFem.style.transition = '.3s ease';
+
+    const LinkFem = document.createElement('a');
+    LinkFem.href = 'feminino.html';
+    LinkFem.id = 'linkfem';
+    LinkFem.textContent = 'Elenco Feminino';
+
+    LinkMasc.style.margin = '0 10px';
+    LinkFem.style.margin = '0 10px';
+    LinkMasc.style.textDecoration = 'none';
+    LinkFem.style.textDecoration = 'none';
+    LinkMasc.style.color = '#333';
+    LinkFem.style.color = '#333';
+
+    paginaElencoFem.appendChild(LinkFem);
+    paginaElencoMasc.appendChild(LinkMasc);
+
+    hamburgerButton.appendChild(paginaElencoFem);
+    hamburgerButton.appendChild(paginaElencoMasc);
+
+    menuAdded = true; 
+  } else {
+    hamburgerButton.innerHTML = '☰'; 
+    menuAdded = false; 
+  }
+
+}
+
+hamburgerButton.addEventListener('click', clickMenu);
+
+
 
 const OutraPagina = (evento) => {
   const imagem_clicada = evento.target;
