@@ -44,8 +44,8 @@ Menu.classList.add('menu');
 
 const paginaElencoMasc = document.createElement('div');
 paginaElencoMasc.id = 'paginaElencoMasc';
-paginaElencoMasc.right = '80px';
 paginaElencoMasc.style.padding = '20px';
+paginaElencoMasc.style.marginRight = '5px';
 paginaElencoMasc.style.border = '2px solid trasparent';
 paginaElencoMasc.style.borderRadius = '8px';
 paginaElencoMasc.style.outline = 'none';
@@ -60,7 +60,6 @@ LinkMasc.textContent = 'Elenco Masculino';
 
 const paginaElencoFem = document.createElement('div');
 paginaElencoFem.id = 'paginaElencoFem';
-paginaElencoFem.style.marginLeft = '5px';
 paginaElencoFem.style.padding = '20px';
 paginaElencoFem.style.border = '2px solid transparent';
 paginaElencoFem.style.borderRadius = '8px';
@@ -80,7 +79,6 @@ LinkMasc.style.textDecoration = 'none';
 LinkFem.style.textDecoration = 'none';
 LinkMasc.style.color = '#333';
 LinkFem.style.color = '#333';
-
 input.style.marginRight = '10px';
 
 paginaElencoFem.appendChild(LinkFem);
@@ -100,8 +98,9 @@ hamburgerButton.textContent = '☰';
 hamburgerButton.style.backgroundColor = 'transparent';
 hamburgerButton.style.cursor = 'pointer';
 hamburgerButton.style.position = 'absolute';
-hamburgerButton.style.marginTop = '60px'
+hamburgerButton.style.marginTop = '40px'
 hamburgerButton.style.right = '60px';
+hamburgerButton.style.height = '200px'
 Header.appendChild(hamburgerButton);
 
 let menuVisible = false; 
@@ -127,8 +126,8 @@ function clickMenu() {
 
     const paginaElencoFem = document.createElement('div');
     paginaElencoFem.id = 'paginaElencoFem';
-    paginaElencoFem.style.marginLeft = '5px';
     paginaElencoFem.style.padding = '20px';
+    paginaElencoMasc.marginBottom = '5px';
     paginaElencoFem.style.border = '2px solid transparent';
     paginaElencoFem.style.borderRadius = '8px';
     paginaElencoFem.style.outline = 'none';
@@ -234,9 +233,10 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
 
     const nome_jogador = document.createElement('h5');
     nome_jogador.innerHTML = nome;
-    nome_jogador.style.marginLeft = '65px';
     nome_jogador.style.color = 'black';
     nome_jogador.style.fontWeight = 'bold';
+    nome_jogador.style.textAlign = 'center';
+    nome_jogador.style.position = 'relative';
 
     const altura_jogador = document.createElement('span');
     altura_jogador.innerHTML = `Altura: ${altura}`;
@@ -313,8 +313,9 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
     
     if (string_busca.length >= 3 || string_busca.length === 0) {
       const novo_array = jogadores.filter((jogador) => {
+        const nome = jogador.nome.toLowerCase();
         const posicao = jogador.posicao.toLowerCase();
-        return posicao.includes(string_busca);
+        return posicao.includes(string_busca) || nome.includes(string_busca);
       });
   
       container.innerHTML = '';

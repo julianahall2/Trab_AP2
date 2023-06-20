@@ -73,7 +73,7 @@ h1 {
 
 
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
       margin-left: 20px;
@@ -82,7 +82,7 @@ h1 {
     }
   
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
       margin-left: 20px;
