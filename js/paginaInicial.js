@@ -1,10 +1,15 @@
-const container = document.getElementById('container');
-container.style.display = 'grid';
-container.style.gridTemplateColumns = '1fr 1fr';
-container.style.maxWidth = '1200px';
-container.style.gap = '5px';
-container.style.marginTop = '200px';
-container.style.alignItems = 'center';
+const Header = document.getElementById('header');
+Header.style.backgroundColor = 'white';
+Header.style.padding = '20px';
+Header.style.display = 'grid';
+Header.style.gridTemplateColumns = '1fr auto 1fr';
+Header.style.alignItems = 'center';
+Header.style.position = 'absolute';
+Header.style.top = '0';
+Header.style.left = '0';
+Header.style.zIndex = '1';
+Header.style.width = '100%';
+Header.style.margin = '0 auto';
 
 const group = document.createElement('div');
 group.style.display = 'flex';
@@ -122,7 +127,15 @@ const OutraPagina = (evento) => {
 
   window.location.href = "detalhes.html";
   }
-  
+
+const container = document.getElementById('container');
+container.style.display = 'grid';
+container.style.gridTemplateColumns = '1fr 1fr';
+container.style.maxWidth = '1200px';
+container.style.gap = '5px';
+container.style.marginTop = '200px';
+container.style.alignItems = 'center';
+
 function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');
     div_card.style.position = 'relative';
