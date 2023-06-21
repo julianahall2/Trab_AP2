@@ -190,7 +190,7 @@ const OutraPagina = (evento) => {
 const container = document.getElementById('container');
 container.style.display = 'grid';
 container.style.gridTemplateColumns = '1fr 1fr'; 
-container.style.margin = 'auto 0';
+container.style.margin = 'auto auto';
 container.style.marginTop = '200px';
 container.style.maxWidth = '1200px';
 container.style.gap = '10px';
@@ -199,8 +199,8 @@ container.style.gap = '10px';
 function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');
     div_card.style.position = 'relative';
-    div_card.style.width = '230px';
-    div_card.style.height = '350px';
+    div_card.style.width = '230';
+    div_card.style.height = '329';
     div_card.style.color = '#2e2d31'; 
     div_card.style.background = 'white';
     div_card.style.overflow = 'hidden';
