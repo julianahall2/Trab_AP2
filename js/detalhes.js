@@ -11,17 +11,19 @@ div.style.border = '3px solid ';
 div.style.width = '700px';
 div.style.height = '800px';
 div.style.borderRadius = '10px';
+div.style.alignItems = 'center';
 
 const divDescricao = document.createElement('div');
 divDescricao.className = 'divDescricao';
 divDescricao.style.display = 'grid';
 divDescricao.style.placeItems = 'center';
 divDescricao.style.background = 'black';
-divDescricao.style.width = 'auto';
-divDescricao.style.height = 'auto';
+divDescricao.style.width = 'fit-content';
+divDescricao.style.height = 'fit-content';
 divDescricao.style.border = '3px solid ';
 divDescricao.style.borderRadius = '10px';
 divDescricao.style.display = 'block';
+divDescricao.style.margin = '0 auto'
 
 const descricao = document.createElement('h5');
 descricao.innerHTML = `Descrição do jogador: ${localStorage.getItem('descricao')}`;
@@ -59,9 +61,6 @@ InfoAdd3.style.marginLeft = ' 100px';
 
 const imagem = document.createElement('img');
 imagem.src = localStorage.getItem('caminho');
-imagem.style.display = 'flex';
-imagem.textAlign = 'center';
-imagem.justifyContent = 'center';
 
 divDescricao.appendChild(imagem);
 
@@ -82,7 +81,6 @@ voltar.textContent = 'Voltar para página inicial';
 voltar.addEventListener('click', function() {
   window.history.back();
 });
-
 div.appendChild(descricao);
 div.appendChild(InfoAdd);
 div.appendChild(InfoAdd2);
