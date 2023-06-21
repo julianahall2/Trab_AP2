@@ -37,8 +37,10 @@ feminino.style.display = 'grid';
 feminino.style.gridTemplateColumns = '1fr 1fr';
 feminino.style.width = '100%';
 feminino.style.height = '100%';
-feminino.style.margin = '200px auto 0';
+feminino.style.margin = '200px auto auto';
 feminino.className = 'feminino';
+feminino.style.maxWidth = '1200px';
+feminino.style.gap = '0px';
 
 const ElencoFeminino = document.createElement('h2')
 ElencoFeminino.innerHTML = 'Elenco Feminino';
@@ -50,13 +52,13 @@ Header.appendChild(ElencoFeminino);
 jogadoresFemininos.forEach(jogador => {
   const cardFeminino = document.createElement('div');
   cardFeminino.style.position = 'relative';
-  cardFeminino.style.width = '230px';
+  cardFeminino.style.width = '200px';
   cardFeminino.style.height = '329px';
   cardFeminino.style.color = '#2e2d31'; 
   cardFeminino.style.background = 'white';
   cardFeminino.style.overflow = 'hidden';
   cardFeminino.style.borderRadius = '20px';
-  cardFeminino.style.padding = '5px';
+  cardFeminino.style.padding = '2px';
   cardFeminino.style.marginBottom = '30px';
 
   const CardContent = document.createElement('div');

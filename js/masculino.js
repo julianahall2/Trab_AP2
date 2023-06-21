@@ -36,9 +36,9 @@ const masculino = document.createElement('section');
 masculino.style.display = 'grid';
 masculino.style.gridTemplateColumns = '1fr 1fr';
 masculino.style.maxWidth = '1200px';
-masculino.style.margin = ' auto 0';
+masculino.style.margin = ' auto auto';
 masculino.style.marginTop = '200px';
-masculino.style.gap = '10px';
+masculino.style.gap = '0px';
 masculino.className = 'masculino';
 
 const ElencoMasculino = document.createElement('h2');
@@ -50,13 +50,13 @@ Header.appendChild(ElencoMasculino)
 jogadoresMasculinos.forEach(jogador => {
   const cardMasculino = document.createElement('div');
   cardMasculino.style.position = 'relative';
-  cardMasculino.style.width = '230px';
+  cardMasculino.style.width = '200px';
   cardMasculino.style.height = '329px';
   cardMasculino.style.color = '#2e2d31';
   cardMasculino.style.background = 'white';
   cardMasculino.style.overflow = 'hidden';
   cardMasculino.style.borderRadius = '20px';
-  cardMasculino.style.padding = '5px';
+  cardMasculino.style.padding = '2px';
   cardMasculino.style.marginBottom = '30px';
 
   const CardContent = document.createElement('div');

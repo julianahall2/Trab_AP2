@@ -1,6 +1,7 @@
 const container = document.createElement('div');
 container.className = 'container';
 container.style.height = '100%';
+container.style.width = '100%';
 container.style.justifyContent =' center';
 container.style.alignItems ='center';
 
@@ -23,7 +24,7 @@ divDescricao.style.height = 'fit-content';
 divDescricao.style.border = '3px solid ';
 divDescricao.style.borderRadius = '10px';
 divDescricao.style.display = 'block';
-divDescricao.style.margin = '0 auto'
+divDescricao.style.margin = '0 auto';
 
 const descricao = document.createElement('h5');
 descricao.innerHTML = `Descrição do jogador: ${localStorage.getItem('descricao')}`;
