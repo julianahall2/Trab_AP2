@@ -2,8 +2,8 @@ const container = document.createElement('div');
 container.className = 'container';
 container.style.height = '100%';
 container.style.width = '100%';
-container.style.justifyContent =' center';
-container.style.alignItems ='center';
+container.style.justifyContent = 'center';
+container.style.alignItems = 'center';
 
 const div = document.createElement('div');
 div.className = 'div';
@@ -63,11 +63,8 @@ InfoAdd3.style.marginLeft = ' 100px';
 const imagem = document.createElement('img');
 imagem.src = localStorage.getItem('caminho');
 
-divDescricao.appendChild(imagem);
 
 div.appendChild(legenda);
-
-
 
 container.appendChild(divDescricao);
 container.appendChild(div);
@@ -88,21 +85,30 @@ div.appendChild(InfoAdd2);
 div.appendChild(InfoAdd3);
 div.appendChild(voltar);
 
+const imagem_div = document.createElement('img');
+imagem_div.src = localStorage.getItem('caminho');
+imagem_div.style.position = 'relative';
+imagem_div.style.marginLeft = '250px';
+
 function ImagemNoLugar() {
   const larguraDaTela = window.innerWidth;
 
   if (larguraDaTela < 768) {
     divDescricao.style.display = 'none';
-    div.appendChild(imagem);
+    div.appendChild(imagem_div);
     div.appendChild(descricao);
     div.appendChild(InfoAdd);
     div.appendChild(InfoAdd2);
     div.appendChild(InfoAdd3);
     div.appendChild(voltar);
   } else {
+    if (div.contains(imagem_div)) {
+      div.removeChild(imagem_div);
+    }
     divDescricao.style.display = 'grid';
-    divDescricao.appendChild(imagem);
   }
+
+  divDescricao.appendChild(imagem);
 }
 
 window.addEventListener('resize', ImagemNoLugar);
@@ -110,4 +116,3 @@ window.addEventListener('resize', ImagemNoLugar);
 ImagemNoLugar();
 
 document.body.appendChild(container);
-
