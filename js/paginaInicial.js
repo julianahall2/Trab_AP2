@@ -4,7 +4,7 @@ Header.style.padding = '20px';
 Header.style.display = 'grid';
 Header.style.gridTemplateColumns = '1fr 1fr 1fr';
 Header.style.alignItems = 'center';
-Header.style.position = 'fixed';
+Header.style.position = 'absolute';
 Header.style.top = '0';
 Header.style.left = '0';
 Header.style.zIndex = '1';
@@ -194,7 +194,7 @@ container.style.margin = 'auto auto';
 container.style.marginTop = '200px';
 container.style.maxWidth = '1200px';
 container.style.gap = '10px';
-
+container.style.position = 'relative';
 
 function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');
@@ -203,10 +203,11 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
     div_card.style.height = '329';
     div_card.style.color = '#2e2d31'; 
     div_card.style.background = 'white';
-    div_card.style.overflow = 'hidden';
+    div_card.style.overflow = 'hidden'; 
     div_card.style.borderRadius = '20px';
     div_card.style.padding = '5px';
     div_card.style.marginBottom = '30px';
+    div_card.className = 'div_card';
   
     const imagem_jogador = document.createElement('img');
     imagem_jogador.src = imagem;

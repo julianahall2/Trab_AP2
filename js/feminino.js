@@ -10,7 +10,6 @@ Header.style.left = '0';
 Header.style.width = '100%';
 Header.style.zIndex = '1';
 
-
 const NavBar = document.createElement('nav');
 NavBar.style.display = 'flex';
 NavBar.style.justifyContent = 'flex-end';
@@ -21,7 +20,7 @@ Voltar.style.borderRadius = '5px';
 Voltar.style.width = '60px';
 Voltar.style.height = '20px';
 Voltar.textContent = 'Voltar';
-Voltar.style.right = '70px';
+Voltar.style.right = '80px';
 Voltar.style.position = 'absolute';
 Voltar.addEventListener('click', function() {
   window.history.back();
@@ -34,17 +33,12 @@ document.body.appendChild(Header);
 const jogadoresFemininos = jogadores.filter(jogador => jogador.elenco === 'feminino');
 
 const feminino = document.createElement('section');
-feminino.style.marginTop = '200px';
-
-const div_feminino = document.createElement('div');
-div_feminino.className = 'div_feminino';
-div_feminino.style.display = 'grid';
-div_feminino.style.gridTemplateColumns = '1fr 1fr ';
-div_feminino.style.maxWidth = '1200px';
-div_feminino.style.margin = 'auto';
-div_feminino.style.marginLeft = '20px';
-div_feminino.style.gap = '5px';
-feminino.appendChild(div_feminino);
+feminino.style.display = 'grid';
+feminino.style.gridTemplateColumns = '1fr 1fr';
+feminino.style.width = '100%';
+feminino.style.height = '100%';
+feminino.style.margin = '200px auto 0';
+feminino.className = 'feminino';
 
 const ElencoFeminino = document.createElement('h2')
 ElencoFeminino.innerHTML = 'Elenco Feminino';
@@ -57,15 +51,15 @@ jogadoresFemininos.forEach(jogador => {
   const cardFeminino = document.createElement('div');
   cardFeminino.style.position = 'relative';
   cardFeminino.style.width = '230px';
-  cardFeminino.style.height = '350px';
+  cardFeminino.style.height = '329px';
   cardFeminino.style.color = '#2e2d31'; 
-  cardFeminino.style.background = 'black';
+  cardFeminino.style.background = 'white';
   cardFeminino.style.overflow = 'hidden';
   cardFeminino.style.borderRadius = '20px';
   cardFeminino.style.padding = '5px';
   cardFeminino.style.marginBottom = '30px';
 
-const CardContent = document.createElement('div');
+  const CardContent = document.createElement('div');
   CardContent.style.position = 'absolute';
   CardContent.style.left = '0';
   CardContent.style.bottom = '0';
@@ -121,17 +115,16 @@ const CardContent = document.createElement('div');
 
   const img= document.createElement('img');
   img.src = jogador.imagem;
+  img.style.borderRadius = '20px';
   img.setAttribute("alt", "Imagens dos jogadores");
    
   CardSubtitle.appendChild(nome);
   CardSubtitle.appendChild(posicao);
   cardFeminino.appendChild(img);
   
-  div_feminino.appendChild(cardFeminino);
+  feminino.appendChild(cardFeminino);
 });
 document.body.appendChild(feminino);
-
-
 
 const footer = document.createElement('footer');
 footer.setAttribute('id', 'botafogo-footer');

@@ -26,7 +26,6 @@ Voltar.addEventListener('click', function() {
   window.history.back();
 });
 
-
 Header.appendChild(NavBar);
 NavBar.appendChild(Voltar);
 document.body.appendChild(Header);
@@ -34,18 +33,13 @@ document.body.appendChild(Header);
 const jogadoresMasculinos = jogadores.filter(jogador => jogador.elenco === 'masculino');
 
 const masculino = document.createElement('section');
+masculino.style.display = 'grid';
+masculino.style.gridTemplateColumns = '1fr 1fr';
+masculino.style.maxWidth = '1200px';
+masculino.style.margin = ' auto 0';
 masculino.style.marginTop = '200px';
-
-const div_masculino = document.createElement('div');
-div_masculino.className = 'div_masculino';
-div_masculino.style.display = 'grid';
-div_masculino.style.gridTemplateColumns = '1fr 1fr ';
-div_masculino.style.maxWidth = '1200px';
-div_masculino.style.margin = 'auto';
-div_masculino.style.marginLeft = '20px';
-div_masculino.style.gap = '5px';
-
-masculino.appendChild(div_masculino);
+masculino.style.gap = '10px';
+masculino.className = 'masculino';
 
 const ElencoMasculino = document.createElement('h2');
 ElencoMasculino.innerHTML = 'Elenco Masculino';
@@ -57,14 +51,13 @@ jogadoresMasculinos.forEach(jogador => {
   const cardMasculino = document.createElement('div');
   cardMasculino.style.position = 'relative';
   cardMasculino.style.width = '230px';
-  cardMasculino.style.height = '350px';
-  cardMasculino.style.color = '#2e2d31'; 
-  cardMasculino.style.background = 'black';
+  cardMasculino.style.height = '329px';
+  cardMasculino.style.color = '#2e2d31';
+  cardMasculino.style.background = 'white';
   cardMasculino.style.overflow = 'hidden';
   cardMasculino.style.borderRadius = '20px';
   cardMasculino.style.padding = '5px';
   cardMasculino.style.marginBottom = '30px';
-
 
   const CardContent = document.createElement('div');
   CardContent.style.position = 'absolute';
@@ -110,6 +103,7 @@ jogadoresMasculinos.forEach(jogador => {
 
   const img= document.createElement('img');
   img.src = jogador.imagem;
+  img.style.borderRadius = '20px';
   img.setAttribute("alt", "Imagens dos jogadores");
 
   const nome = document.createElement('h3');
@@ -126,10 +120,9 @@ jogadoresMasculinos.forEach(jogador => {
   CardSubtitle.appendChild(posicao);
   cardMasculino.appendChild(img);  
 
-  div_masculino.appendChild(cardMasculino);
+  masculino.appendChild(cardMasculino);
 });
 document.body.appendChild(masculino);
-
 
 const footer = document.createElement('footer');
 footer.setAttribute('id', 'botafogo-footer');

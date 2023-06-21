@@ -3,14 +3,14 @@ body{
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .div_feminino{
+    .feminino{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
     }
   
     }
 
   @media screen and (min-width: 1025px){
-    .div_feminino{
+    .feminino{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
     
     }
