@@ -1,7 +1,5 @@
 const container = document.createElement('div');
 container.className = 'container';
-container.style.display = 'grid';
-container.style.gridTemplateColumns = '1fr 1fr';
 container.style.height = '100%';
 container.style.justifyContent =' center';
 container.style.alignItems ='center';
@@ -14,6 +12,16 @@ div.style.width = '700px';
 div.style.height = '800px';
 div.style.borderRadius = '10px';
 
+const divDescricao = document.createElement('div');
+divDescricao.className = 'divDescricao';
+divDescricao.style.display = 'grid';
+divDescricao.style.placeItems = 'center';
+divDescricao.style.background = 'black';
+divDescricao.style.width = 'auto';
+divDescricao.style.height = 'auto';
+divDescricao.style.border = '3px solid ';
+divDescricao.style.borderRadius = '10px';
+divDescricao.style.display = 'block';
 
 const descricao = document.createElement('h5');
 descricao.innerHTML = `Descrição do jogador: ${localStorage.getItem('descricao')}`;
@@ -49,27 +57,17 @@ InfoAdd3.style.color = 'black';
 InfoAdd3.style.width = '400px';
 InfoAdd3.style.marginLeft = ' 100px';
 
-const divDescricao = document.createElement('div');
-divDescricao.className = 'divDescricao';
-divDescricao.style.background = 'black';
-divDescricao.style.border = '3px solid ';
-divDescricao.style.width = '700px';
-divDescricao.style.height = '800px';
-divDescricao.style.borderRadius = '10px';
-
-
 const imagem = document.createElement('img');
 imagem.src = localStorage.getItem('caminho');
-imagem.style.width = 'auto';
-imagem.style.justifyContent = 'center';
+imagem.style.display = 'flex';
+imagem.textAlign = 'center';
+imagem.justifyContent = 'center';
 
 divDescricao.appendChild(imagem);
 
 div.appendChild(legenda);
-div.appendChild(descricao);
-div.appendChild(InfoAdd);
-div.appendChild(InfoAdd2);
-div.appendChild(InfoAdd3);
+
+
 
 container.appendChild(divDescricao);
 container.appendChild(div);
@@ -85,7 +83,32 @@ voltar.addEventListener('click', function() {
   window.history.back();
 });
 
+div.appendChild(descricao);
+div.appendChild(InfoAdd);
+div.appendChild(InfoAdd2);
+div.appendChild(InfoAdd3);
 div.appendChild(voltar);
+
+function ImagemNoLugar() {
+  const larguraDaTela = window.innerWidth;
+
+  if (larguraDaTela < 768) {
+    divDescricao.style.display = 'none';
+    div.appendChild(imagem);
+    div.appendChild(descricao);
+    div.appendChild(InfoAdd);
+    div.appendChild(InfoAdd2);
+    div.appendChild(InfoAdd3);
+    div.appendChild(voltar);
+  } else {
+    divDescricao.style.display = 'grid';
+    divDescricao.appendChild(imagem);
+  }
+}
+
+window.addEventListener('resize', ImagemNoLugar);
+
+ImagemNoLugar();
 
 document.body.appendChild(container);
 

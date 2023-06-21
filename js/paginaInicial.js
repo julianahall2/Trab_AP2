@@ -127,7 +127,7 @@ function clickMenu() {
     const paginaElencoFem = document.createElement('div');
     paginaElencoFem.id = 'paginaElencoFem';
     paginaElencoFem.style.padding = '20px';
-    paginaElencoMasc.marginBottom = '5px';
+    paginaElencoFem.style.marginBottom = '5px';
     paginaElencoFem.style.border = '2px solid transparent';
     paginaElencoFem.style.borderRadius = '8px';
     paginaElencoFem.style.outline = 'none';
@@ -189,13 +189,12 @@ const OutraPagina = (evento) => {
 
 const container = document.getElementById('container');
 container.style.display = 'grid';
-container.style.gridTemplateColumns = '1fr 1fr';
-container.style.maxWidth = '1200px';
-container.style.gap = '5px';
+container.style.gridTemplateColumns = '1fr 1fr'; 
+container.style.margin = 'auto 0';
 container.style.marginTop = '200px';
-container.style.alignItems = 'center';
-container.margin = ' 0 auto';
-container.marginLeft = '30px';
+container.style.maxWidth = '1200px';
+container.style.gap = '10px';
+
 
 function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascimento, elenco,clica_imagem) {
     const div_card = document.createElement('div');

@@ -22,9 +22,7 @@ h1 {
     box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
    }
 
-.hamburger-button:hover{
-  background-color: black;
-}
+
 
 @media screen and (max-width: 767px) {
   .menu{
@@ -32,65 +30,49 @@ h1 {
   }
 }
   
-
-/* Estilos para telas a partir de 768px */
-@media screen and (min-width: 768px) {
-  .group{
-    max-width: 190px !important;
-
-  }
-  h1{
-    font-size:xx-large;
-  }
-  .menu{
-    margin-left: 30px;
-    justify-content: center !important;
-  }
-  .hamburger-button {
-    display: none !important;
-  }
-}
-
-
-/* Estilos para telas a partir de 1024px */
-@media (min-width: 1024px) {
-  .group{
-    max-width: 190px !important;
-    margin-left: -990px;
-  }
-  h1{
-    font-size:auto;
-    white-space:nowrap;
-  }
-  .menu{
-    margin-right: 50px;
-    justify-content: flex-end !important;
-  }
-  .hamburger-button {
-    display: none !important;
-  }
-}
-
-
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr !important;
-      margin-left: 20px;
+  
     }
- 
+    .group{
+      width: 200px !important;
+      margin-left: 0 !important;
+  
+    }
+    h1{
+      font-size:xx-large ;
+    }
+    .menu{
+      margin-left: 30px;
+      justify-content: center !important;
+    }
+    .hamburger-button {
+      display: none !important;
+    }
     }
   
 
 @media screen and (min-width: 1024px) {
     #container{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
-      margin-left: 20px;
-
     }
- 
+    .group{
+      width: 190px !important;
     }
+    h1{
+      font-size:auto;
+      white-space:nowrap;
+      font-size:xx-large ;
+    }
+    .menu{
+      margin-right: 50px;
+      justify-content: flex-end !important;
+    }
+    .hamburger-button {
+      display: none !important;
+    }
+  }
   
-
     
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Playfair+Display:wght@500&display=swap');
