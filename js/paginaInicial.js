@@ -149,7 +149,7 @@ const searchIcon = document.createElement('span');
 searchIcon.id = 'search-icon';
 searchIcon.style.fontFamily = 'Material Symbols Outlined';
 searchIcon.style.fontSize = '24px';
-searchIcon.style.marginRight = '5px';
+searchIcon.style.marginRight = '2px';
 searchIcon.style.cursor = 'pointer';
 searchIcon.textContent = String.fromCodePoint(0xe8b6);
 
@@ -159,7 +159,7 @@ searchInput.type = 'text';
 searchInput.placeholder = 'Buscar';
 searchInput.style.border = 'none';
 searchInput.style.padding = '5px';
-searchInput.style.maxWidth = '160px';
+searchInput.style.maxWidth = '100px';
 
 
 searchContainer.appendChild(searchIcon);
