@@ -23,6 +23,22 @@ h1 {
 }
 
 
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+#search-icon {
+  background: none;
+  border: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#search-input {
+  border: none;
+  padding: 5px;
+}
 
 @media screen and (max-width: 767px) {
   .menu{
@@ -37,6 +53,7 @@ h1 {
   .group{
     width: 200px !important;
     margin-left: 0 !important;
+    display: block !important;
   }
   h1{
     font-size:xx-large ;
@@ -48,6 +65,10 @@ h1 {
     .hamburger-button {
     display: none !important;
     }
+    .search-container{
+      display: none !important;
+    }
+
 }
   
 
@@ -57,6 +78,7 @@ h1 {
     }
     .group{
       width: 190px !important;
+      display: block !important;
     }
     h1{
       font-size:auto;
@@ -68,6 +90,9 @@ h1 {
       justify-content: flex-end !important;
     }
     .hamburger-button {
+      display: none !important;
+    }
+    .search-container{
       display: none !important;
     }
 }

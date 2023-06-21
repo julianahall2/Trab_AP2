@@ -17,6 +17,7 @@ group.style.lineHeight = '28px';
 group.style.position = 'relative';
 group.style.width = '150px';
 group.style.marginLeft = '30px';
+group.style.display = 'none';
 group.classList.add('group');
 
 const input = document.createElement('input');
@@ -131,6 +132,49 @@ hamburgerButton.addEventListener('click', function() {
   menuVisible = !menuVisible;
   menu.style.display = menuVisible ? 'block' : 'none';
 });
+
+
+const fontLink = document.createElement('link');
+fontLink.rel = 'stylesheet';
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0';
+document.head.appendChild(fontLink);
+
+const searchContainer = document.createElement('div');
+searchContainer.className = 'search-container';
+searchContainer.style.display = 'flex';
+searchContainer.style.alignItems = 'center';
+searchContainer.style.marginLeft ='20px';
+
+const searchIcon = document.createElement('span');
+searchIcon.id = 'search-icon';
+searchIcon.style.fontFamily = 'Material Symbols Outlined';
+searchIcon.style.fontSize = '24px';
+searchIcon.style.marginRight = '5px';
+searchIcon.style.cursor = 'pointer';
+searchIcon.textContent = String.fromCodePoint(0xe8b6);
+
+const searchInput = document.createElement('input');
+searchInput.id = 'search-input';
+searchInput.type = 'text';
+searchInput.placeholder = 'Buscar';
+searchInput.style.border = 'none';
+searchInput.style.padding = '5px';
+searchInput.style.maxWidth = '160px';
+
+
+searchContainer.appendChild(searchIcon);
+searchContainer.appendChild(searchInput);
+
+
+searchIcon.addEventListener('click', function() {
+  searchInput.classList.toggle('show');
+  if (searchInput.classList.contains('show')) {
+    searchInput.focus();
+  }
+});
+
+Header.appendChild(searchContainer);
+
 
 
 const OutraPagina = (evento) => {
@@ -297,6 +341,7 @@ function criarCard(imagem, nome_completo,descricao,nome, altura, posicao, nascim
   };
   
   input.onkeyup = busca_posicao;
+  searchInput.onkeyup = busca_posicao;
   
 
 const footer = document.createElement('footer');
